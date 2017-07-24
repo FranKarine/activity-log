@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2017-07-24
+  description: MyText
+  important_info: MyText
+  service: MyText
+  food_drink: MyText
+  medication: MyText
+  user_id: 
+  client_id: 
+
+two:
+  date: 2017-07-24
+  description: MyText
+  important_info: MyText
+  service: MyText
+  food_drink: MyText
+  medication: MyText
+  user_id: 
+  client_id: 

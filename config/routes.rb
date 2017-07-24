@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :activities
+  resources :clients
   devise_for :users
   get 'welcome/home', to: 'welcome#home'
   root 'welcome#home'
