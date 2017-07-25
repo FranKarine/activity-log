@@ -1,0 +1,103 @@
+<%= form_for(@log) do |f| %>
+  <% if @log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@log.errors.count, "error") %> prohibited this log from being saved:</h2>
+
+      <ul>
+      <% @log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :clienteee %><br>
+    <%= f.text_field :client %>
+  </div>
+  <div class="field">
+    <%= f.label :carg_name %><br>
+    <%= f.text_field :carg_name %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.text_field :data %>
+  </div>
+  <div class="field">
+    <%= f.label :f_time %><br>
+    <%= f.text_field :f_time %>
+  </div>
+  <div class="field">
+    <%= f.label :s_time %><br>
+    <%= f.text_field :s_time %>
+  </div>
+  <div class="field">
+    <%= f.label :fd_breaktime %><br>
+    <%= f.text_field :fd_breaktime %>
+  </div>
+  <div class="field">
+    <%= f.label :am_snack %><br>
+    <%= f.text_field :am_snack %>
+  </div>
+  <div class="field">
+    <%= f.label :fd_lunch %><br>
+    <%= f.text_field :fd_lunch %>
+  </div>
+  <div class="field">
+    <%= f.label :pm_snack %><br>
+    <%= f.text_field :pm_snack %>
+  </div>
+  <div class="field">
+    <%= f.label :dinner %><br>
+    <%= f.text_field :dinner %>
+  </div>
+  <div class="field">
+    <%= f.label :ngt_nack %><br>
+    <%= f.text_field :ngt_nack %>
+  </div>
+  <div class="field">
+    <%= f.label :med_breaktime %><br>
+    <%= f.text_field :med_breaktime %>
+  </div>
+  <div class="field">
+    <%= f.label :med_lunch %><br>
+    <%= f.text_field :med_lunch %>
+  </div>
+  <div class="field">
+    <%= f.label :med_eventime %><br>
+    <%= f.text_field :med_eventime %>
+  </div>
+  <div class="field">
+    <%= f.label :med_ngtime %><br>
+    <%= f.text_field :med_ngtime %>
+  </div>
+  <div class="field">
+    <%= f.label :imp_info %><br>
+    <%= f.text_field :imp_info %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br>
+    <%= f.text_field :desc %>
+  </div>
+  <div class="field">
+    <% Extra.all.each do |extra| %>
+    <%= check_box_tag "log[extra_ids][]", extra.id %>
+    <%= extra.description %>
+    <% end %>
+  </div>
+  <div class="field">
+    <% Housekeeping.all.each do |housekeeping| %>
+    <%= check_box_tag "log[housekeeping_ids][]", housekeeping.id %>
+    <%= housekeeping.description %>
+    <% end %>
+  </div>
+  <div class="field">
+    <% Personalhigiene.all.each do |personalhigiene| %>
+    <%= check_box_tag "log[personalhigiene_ids][]", personalhigiene.id %>
+    <%= personalhigiene.descrpition %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

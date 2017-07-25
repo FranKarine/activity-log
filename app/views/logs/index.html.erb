@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Carg name</th>
+      <th>Data</th>
+      <th>F time</th>
+      <th>S time</th>
+      <th>Fd breaktime</th>
+      <th>Am snack</th>
+      <th>Fd lunch</th>
+      <th>Pm snack</th>
+      <th>Dinner</th>
+      <th>Ngt nack</th>
+      <th>Med breaktime</th>
+      <th>Med lunch</th>
+      <th>Med eventime</th>
+      <th>Med ngtime</th>
+      <th>Imp info</th>
+      <th>Desc</th>
+      <th>Extra</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logs.each do |log| %>
+      <tr>
+        <td><%= log.client %></td>
+        <td><%= log.carg_name %></td>
+        <td><%= log.data %></td>
+        <td><%= log.f_time %></td>
+        <td><%= log.s_time %></td>
+        <td><%= log.fd_breaktime %></td>
+        <td><%= log.am_snack %></td>
+        <td><%= log.fd_lunch %></td>
+        <td><%= log.pm_snack %></td>
+        <td><%= log.dinner %></td>
+        <td><%= log.ngt_nack %></td>
+        <td><%= log.med_breaktime %></td>
+        <td><%= log.med_lunch %></td>
+        <td><%= log.med_eventime %></td>
+        <td><%= log.med_ngtime %></td>
+        <td><%= log.imp_info %></td>
+        <td><%= log.desc %></td>
+        <td><%= log.extra %></td>
+        <td><%= link_to 'Show', log %></td>
+        <td><%= link_to 'Edit', edit_log_path(log) %></td>
+        <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Log', new_log_path %>

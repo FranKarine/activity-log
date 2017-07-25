@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
   
+  resources :logs
+  resources :logs
+  resources :logs
+  resources :logs
+  resources :logs
   resources :activities
   resources :clients
   devise_for :users
   get 'welcome/home', to: 'welcome#home'
   
+  get '/logs', to: 'logs#index'
+  root 'logs#index'
+  
   get 'activities', to: 'activities#new'
-  root 'activities#new'
+  'activities#new'
   
   
   

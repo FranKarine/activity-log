@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724002442) do
+ActiveRecord::Schema.define(version: 20170725234044) do
 
   create_table "activities", force: :cascade do |t|
     t.date     "date"
@@ -36,6 +36,59 @@ ActiveRecord::Schema.define(version: 20170724002442) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "extralogs", force: :cascade do |t|
+    t.integer  "extra_id"
+    t.integer  "log_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "extralogs", ["extra_id"], name: "index_extralogs_on_extra_id"
+  add_index "extralogs", ["log_id"], name: "index_extralogs_on_log_id"
+
+  create_table "extras", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "housekeepings", force: :cascade do |t|
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.string   "client"
+    t.string   "carg_name"
+    t.string   "data"
+    t.string   "f_time"
+    t.string   "s_time"
+    t.string   "fd_breaktime"
+    t.string   "am_snack"
+    t.string   "fd_lunch"
+    t.string   "pm_snack"
+    t.string   "dinner"
+    t.string   "ngt_nack"
+    t.string   "med_breaktime"
+    t.string   "med_lunch"
+    t.string   "med_eventime"
+    t.string   "med_ngtime"
+    t.string   "imp_info"
+    t.string   "desc"
+    t.integer  "extra_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "logs", ["extra_id"], name: "index_logs_on_extra_id"
+
+  create_table "personalhigienes", force: :cascade do |t|
+    t.string   "descrpition"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

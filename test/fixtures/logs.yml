@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: MyString
+  carg_name: MyString
+  data: MyString
+  f_time: MyString
+  s_time: MyString
+  fd_breaktime: MyString
+  am_snack: MyString
+  fd_lunch: MyString
+  pm_snack: MyString
+  dinner: MyString
+  ngt_nack: MyString
+  med_breaktime: MyString
+  med_lunch: MyString
+  med_eventime: MyString
+  med_ngtime: MyString
+  imp_info: MyString
+  desc: MyString
+  extra_id: 
+
+two:
+  client: MyString
+  carg_name: MyString
+  data: MyString
+  f_time: MyString
+  s_time: MyString
+  fd_breaktime: MyString
+  am_snack: MyString
+  fd_lunch: MyString
+  pm_snack: MyString
+  dinner: MyString
+  ngt_nack: MyString
+  med_breaktime: MyString
+  med_lunch: MyString
+  med_eventime: MyString
+  med_ngtime: MyString
+  imp_info: MyString
+  desc: MyString
+  extra_id: 
