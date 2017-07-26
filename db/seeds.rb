@@ -8,7 +8,4 @@
 
 
 
-Extra.create(description: 'Transport Client ')
-Extra.create(description: 'Errands / Shopping ')
-Extra.create(description: 'Companionship Activities ')
-Extra.create(description: 'Acompany Walking ')
+
