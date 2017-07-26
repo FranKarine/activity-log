@@ -11,19 +11,85 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <!--First row / two columns-->
+  <div class="container">
+  <div class="row">
+    <div class="col-md-8">
+  
   <div class="field">
-    <%= f.label :client %><br>
+    <%= f.label :Client_name %><br>
     <%= f.text_field :client %>
   </div>
+  
   <div class="field">
-    <%= f.label :carg_name %><br>
+    <%= f.label :Caregiver_name %><br>
     <%= f.text_field :carg_name %>
   </div>
+  
   <div class="field">
-    <%= f.label :data %><br>
+    <%= f.label :Data %><br>
     <%= f.text_field :data %>
   </div>
+  </div>
+  <div class="col-md-4">
+  <div class="field">
+    <%= f.label :Important_info %><br>
+    <%= f.text_field :imp_info %>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <!--En of first row / two columns-->
+  
+  <!--Second row / three columns-->
+  <div class="container">
+  <div class="row">
+  <div class="col-md-3">
+  <div class="field">
+     <%= f.label "Extras" %><br />
+  <%= f.collection_check_boxes :extra_ids, Extra.all, :id, :description do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+   </div>
+  </div>
+  <div class="col-md-2">
+  <div class="field">
+    <%= f.label "Housekeeping" %><br />
+  <%= f.collection_check_boxes :housekeeping_ids, Housekeeping.all, :id, :description do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+  </div>
+  </div>
+  <div class="col-md-3">
+  <div class="field">
+     <%= f.label "Personal Hygiene" %><br />
+  <%= f.collection_check_boxes :personalhigiene_ids, Personalhigiene.all, :id, :descrpition do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+   </div>
+  </div>
+  </div>
+</div>  
+  
+  <!-- end of second row-->
+  
+  
+  
+  
+  
+  
   <div class="field">
     <%= f.label :f_time %><br>
     <%= f.text_field :f_time %>
@@ -72,50 +138,13 @@
     <%= f.label :med_ngtime %><br>
     <%= f.text_field :med_ngtime %>
   </div>
-  <div class="field">
-    <%= f.label :imp_info %><br>
-    <%= f.text_field :imp_info %>
-  </div>
+  
   <div class="field">
     <%= f.label :desc %><br>
     <%= f.text_field :desc %>
   </div>
   
-  <div class="row">
-  <div class="col-md-3">
-  <div class="field">
-     <%= f.label "Extras" %><br />
-  <%= f.collection_check_boxes :extra_ids, Extra.all, :id, :description do |b| %>
-    <div class="collection-check-box">
-      <%= b.check_box %>
-      <%= b.label %>
-    </div>
-  <% end %>
-   </div>
-  </div>
-  <div class="col-md-2">
-  <div class="field">
-    <%= f.label "Housekeeping" %><br />
-  <%= f.collection_check_boxes :housekeeping_ids, Housekeeping.all, :id, :description do |b| %>
-    <div class="collection-check-box">
-      <%= b.check_box %>
-      <%= b.label %>
-    </div>
-  <% end %>
-  </div>
-  </div>
-  <div class="col-md-3">
-  <div class="field">
-     <%= f.label "Personal Hygiene" %><br />
-  <%= f.collection_check_boxes :personalhigiene_ids, Personalhigiene.all, :id, :descrpition do |b| %>
-    <div class="collection-check-box">
-      <%= b.check_box %>
-      <%= b.label %>
-    </div>
-  <% end %>
-   </div>
-  </div>
-  </div>
+  
   <!--<div class="col-md-3">
   <div class="field">
     <!--<%= f.label :personalhigiene_id %><br>

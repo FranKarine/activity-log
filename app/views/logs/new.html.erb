@@ -1,4 +1,11 @@
-<h1>New Log</h1>
+<%= image_tag 'smalllogo.png' %>
+            	
+    
+    	<ul class="nav nav-tabs">
+  			<li><%= link_to "History", logs_path %></a></li>
+  			<li role="presentation"><a href="#">Careplan</a></li>
+  			<li role="presentation"><%= link_to "logout", destroy_user_session_path, method: :delete %></</li>
+		</ul>
 
 <%= render 'form' %>
 
