@@ -8,7 +8,7 @@
 
 
 
-Extras.create(description: 'Transport Client ')
-Extras.create(description: 'Errands / Shopping ')
-Extras.create(description: 'Companionship Activities ')
-Extras.create(description: 'Acompany Walking ')
+Extra.create(description: 'Transport Client ')
+Extra.create(description: 'Errands / Shopping ')
+Extra.create(description: 'Companionship Activities ')
+Extra.create(description: 'Acompany Walking ')
