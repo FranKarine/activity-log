@@ -1,3 +1,3 @@
 class Personalhigiene < ActiveRecord::Base
-    belongs_to :log
+    has_and_belongs_to_many :log
 end

@@ -87,7 +87,24 @@
 
 <p>
   <strong>Extra:</strong>
-  <%= @log.extra %>
+ <% @log.extra.each do |ph| %>
+     <%= ph.description %>
+      <% end %>
+</p>
+
+<p>
+  <strong>Housekeeping:</strong>
+  <% @log.housekeeping.each do |ph| %>
+     <%= ph.description %>
+      <% end %>
+ 
+</p>
+
+<p>
+  <strong>Personalhigiene:</strong>
+ <% @log.personalhigiene.each do |ph| %>
+     <%= ph.description %>
+      <% end %>
 </p>
 
 <%= link_to 'Edit', edit_log_path(@log) %> |

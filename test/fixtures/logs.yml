@@ -19,6 +19,8 @@ one:
   imp_info: MyString
   desc: MyString
   extra_id: 
+  housekeeping_id: 
+  personalhigiene_id: 
 
 two:
   client: MyString
@@ -39,3 +41,5 @@ two:
   imp_info: MyString
   desc: MyString
   extra_id: 
+  housekeeping_id: 
+  personalhigiene_id: 

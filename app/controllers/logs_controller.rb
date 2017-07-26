@@ -69,6 +69,6 @@ class LogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def log_params
-      params.require(:log).permit(:client, :carg_name, :data, :f_time, :s_time, :fd_breaktime, :am_snack, :fd_lunch, :pm_snack, :dinner, :ngt_nack, :med_breaktime, :med_lunch, :med_eventime, :med_ngtime, :imp_info, :desc, :extra_id)
+      params.require(:log).permit(:client, :carg_name, :data, :f_time, :s_time, :fd_breaktime, :am_snack, :fd_lunch, :pm_snack, :dinner, :ngt_nack, :med_breaktime, :med_lunch, :med_eventime, :med_ngtime, :imp_info, :desc, :housekeeping_id, :personalhigiene_id, extra_ids:[], housekeeping_ids:[], personalhigiene_id:[])
     end
 end

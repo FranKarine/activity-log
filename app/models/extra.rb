@@ -1,4 +1,3 @@
 class Extra < ActiveRecord::Base
-    has_many :extralogs
-    has_many :log
+   has_and_belongs_to_many :log
 end

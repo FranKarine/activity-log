@@ -1,4 +1,5 @@
-<%= form_for(@log) do |f| %>
+	<div class="container">
+	  <%= form_for(@log) do |f| %>
   <% if @log.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@log.errors.count, "error") %> prohibited this log from being saved:</h2>
@@ -12,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :clienteee %><br>
+    <%= f.label :client %><br>
     <%= f.text_field :client %>
   </div>
   <div class="field">
@@ -79,25 +80,49 @@
     <%= f.label :desc %><br>
     <%= f.text_field :desc %>
   </div>
+  
+  <div class="row">
+  <div class="col-md-3">
   <div class="field">
-    <% Extra.all.each do |extra| %>
-    <%= check_box_tag "log[extra_ids][]", extra.id %>
-    <%= extra.description %>
-    <% end %>
+     <%= f.label "Extras" %><br />
+  <%= f.collection_check_boxes :extra_ids, Extra.all, :id, :description do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+   </div>
   </div>
+  <div class="col-md-2">
   <div class="field">
-    <% Housekeeping.all.each do |housekeeping| %>
-    <%= check_box_tag "log[housekeeping_ids][]", housekeeping.id %>
-    <%= housekeeping.description %>
-    <% end %>
+    <%= f.label "Housekeeping" %><br />
+  <%= f.collection_check_boxes :housekeeping_ids, Housekeeping.all, :id, :description do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
   </div>
+  </div>
+  <div class="col-md-3">
   <div class="field">
-    <% Personalhigiene.all.each do |personalhigiene| %>
-    <%= check_box_tag "log[personalhigiene_ids][]", personalhigiene.id %>
-    <%= personalhigiene.descrpition %>
-    <% end %>
+     <%= f.label "Personal Hygiene" %><br />
+  <%= f.collection_check_boxes :personalhigiene_ids, Personalhigiene.all, :id, :descrpition do |b| %>
+    <div class="collection-check-box">
+      <%= b.check_box %>
+      <%= b.label %>
+    </div>
+  <% end %>
+   </div>
+  </div>
+  </div>
+  <div class="col-md-3">
+  <div class="field">
+    <%= f.label :personalhigiene_id %><br>
+    <%= f.text_field :personalhigiene_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

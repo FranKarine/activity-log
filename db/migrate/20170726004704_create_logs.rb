@@ -19,6 +19,8 @@ class CreateLogs < ActiveRecord::Migration
       t.string :imp_info
       t.string :desc
       t.references :extra, index: true, foreign_key: true
+      t.references :housekeeping, index: true, foreign_key: true
+      t.references :personalhigiene, index: true, foreign_key: true
 
       t.timestamps null: false
     end
