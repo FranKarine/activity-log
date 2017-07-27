@@ -6,6 +6,7 @@
 
 .box_outline_red {
   border-color: #A2795A;
+  padding: 1em;
 }
 
 .box_outline_grey {
@@ -14,4 +15,30 @@
 
 .alternate_row_colors > .field:nth-child(odd) {
   background-color: #F8F8F8;
+}
+
+.box_header {
+  padding: 3px 0;
+  text-align: center;
+}
+
+#log_client {
+  width: 100%;
+}
+
+#log_carg_name {
+  width: 100%;
+}
+
+.row {
+  margin-top: 2em;
+}
+
+#log_desc, #log_imp_info {
+  width: 100%;
+  border: none;
+}
+
+.actions {
+  text-align: right;
 }

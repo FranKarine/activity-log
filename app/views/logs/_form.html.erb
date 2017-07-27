@@ -16,7 +16,7 @@
   <% end %>
 
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-7">
 
       <div class="field">
         <%= f.label :client %><br>
@@ -49,9 +49,9 @@
       </div>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-5">
       <div class="field">
-        <div class="box_outline box_outline_red"><%= f.label :Important_Info %><br></div>
+        <div class="box_outline box_outline_red box_header"><%= f.label :Important_Info %><br></div>
         <div class="box_outline box_outline_red"><%= f.text_area(:imp_info, size: '50x10') %></div>
       </div>
     </div>
@@ -60,7 +60,7 @@
 
   <div class="row box_outline box_outline_grey">
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="field">
         <%= f.label "Personal Hygiene" %><br />
         <%= f.collection_check_boxes :personalhigiene_ids, Personalhigiene.all, :id, :descrpition do |b| %>
@@ -72,7 +72,7 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="field">
         <%= f.label "Housekeeping" %><br />
         <%= f.collection_check_boxes :housekeeping_ids, Housekeeping.all, :id, :description do |b| %>
@@ -84,7 +84,7 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="field">
         <%= f.label "Extras" %><br />
         <%= f.collection_check_boxes :extra_ids, Extra.all, :id, :description do |b| %>
