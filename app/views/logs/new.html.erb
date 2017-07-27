@@ -1,11 +1,23 @@
-<%= image_tag 'smalllogo.png' %>
-            	
-    
-    	<ul class="nav nav-tabs">
-  			<li><%= link_to "History", logs_path %></a></li>
-  			<li role="presentation"><a href="#">Careplan</a></li>
-  			<li role="presentation"><%= link_to "logout", destroy_user_session_path, method: :delete %></</li>
-		</ul>
+<header class="w3-container w3-teal">
+        <div class="col-md-2" align=left>
+            <%= image_tag 'smalllogo.png' %>
+        </div>
+        <div class="col-md-7" align=center>
+            <h1>Client Activity Log</h1>
+         </div>
+</header>
+
+   
+<div class="row">
+    <div class="col-md-12" align=left>    
+            <ul class="nav nav-tabs" align=right>
+                <li><%= link_to "History", logs_path %></a></li>
+  		        <li role="presentation"><a href="#">Careplan</a></li>
+  		        <li role="presentation"><%= link_to "logout", destroy_user_session_path, method: :delete %></</li>
+  		    </ul>
+  	</div>
+</div>
+            
 
 <%= render 'form' %>
 

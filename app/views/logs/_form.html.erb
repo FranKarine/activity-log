@@ -11,41 +11,76 @@
       </ul>
     </div>
   <% end %>
-  
-  <!--First row / two columns-->
-  <div class="container">
-  <div class="row">
-    <div class="col-md-8">
-  
+
   <div class="field">
-    <%= f.label :Client_name %><br>
+    <%= f.label :client %><br>
     <%= f.text_field :client %>
   </div>
-  
   <div class="field">
     <%= f.label :Caregiver_name %><br>
     <%= f.text_field :carg_name %>
   </div>
-  
   <div class="field">
     <%= f.label :Data %><br>
     <%= f.text_field :data %>
   </div>
-  </div>
-  <div class="col-md-4">
   <div class="field">
-    <%= f.label :Important_info %><br>
+    <%= f.label :Finish_time %><br>
+    <%= f.text_field :f_time %>
+  </div>
+  <div class="field">
+    <%= f.label :Start_time %><br>
+    <%= f.text_field :s_time %>
+  </div>
+  <div class="field">
+    <%= f.label :Breakfast %><br>
+    <%= f.text_field :fd_breaktime %>
+  </div>
+  <div class="field">
+    <%= f.label :AM_snack %><br>
+    <%= f.text_field :am_snack %>
+  </div>
+  <div class="field">
+    <%= f.label :Lunch %><br>
+    <%= f.text_field :fd_lunch %>
+  </div>
+  <div class="field">
+    <%= f.label :PM_snack %><br>
+    <%= f.text_field :pm_snack %>
+  </div>
+  <div class="field">
+    <%= f.label :Dinner %><br>
+    <%= f.text_field :dinner %>
+  </div>
+  <div class="field">
+    <%= f.label :Night_snack %><br>
+    <%= f.text_field :ngt_nack %>
+  </div>
+  <div class="field">
+    <%= f.label :med_breaktime %><br>
+    <%= f.text_field :med_breaktime %>
+  </div>
+  <div class="field">
+    <%= f.label :med_lunch %><br>
+    <%= f.text_field :med_lunch %>
+  </div>
+  <div class="field">
+    <%= f.label :med_eventime %><br>
+    <%= f.text_field :med_eventime %>
+  </div>
+  <div class="field">
+    <%= f.label :med_ngtime %><br>
+    <%= f.text_field :med_ngtime %>
+  </div>
+  <div class="field">
+    <%= f.label :Important_Info %><br>
     <%= f.text_field :imp_info %>
-    </div>
   </div>
+  <div class="field">
+    <%= f.label :Description %><br>
+    <%= f.text_field :desc %>
   </div>
-  </div>
-  </div>
-  </div>
-  <!--En of first row / two columns-->
   
-  <!--Second row / three columns-->
-  <div class="container">
   <div class="row">
   <div class="col-md-3">
   <div class="field">
@@ -81,75 +116,9 @@
    </div>
   </div>
   </div>
-</div>  
-  
-  <!-- end of second row-->
   
   
-  
-  
-  
-  
-  <div class="field">
-    <%= f.label :f_time %><br>
-    <%= f.text_field :f_time %>
-  </div>
-  <div class="field">
-    <%= f.label :s_time %><br>
-    <%= f.text_field :s_time %>
-  </div>
-  <div class="field">
-    <%= f.label :fd_breaktime %><br>
-    <%= f.text_field :fd_breaktime %>
-  </div>
-  <div class="field">
-    <%= f.label :am_snack %><br>
-    <%= f.text_field :am_snack %>
-  </div>
-  <div class="field">
-    <%= f.label :fd_lunch %><br>
-    <%= f.text_field :fd_lunch %>
-  </div>
-  <div class="field">
-    <%= f.label :pm_snack %><br>
-    <%= f.text_field :pm_snack %>
-  </div>
-  <div class="field">
-    <%= f.label :dinner %><br>
-    <%= f.text_field :dinner %>
-  </div>
-  <div class="field">
-    <%= f.label :ngt_nack %><br>
-    <%= f.text_field :ngt_nack %>
-  </div>
-  <div class="field">
-    <%= f.label :med_breaktime %><br>
-    <%= f.text_field :med_breaktime %>
-  </div>
-  <div class="field">
-    <%= f.label :med_lunch %><br>
-    <%= f.text_field :med_lunch %>
-  </div>
-  <div class="field">
-    <%= f.label :med_eventime %><br>
-    <%= f.text_field :med_eventime %>
-  </div>
-  <div class="field">
-    <%= f.label :med_ngtime %><br>
-    <%= f.text_field :med_ngtime %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :desc %><br>
-    <%= f.text_field :desc %>
-  </div>
-  
-  
-  <!--<div class="col-md-3">
-  <div class="field">
-    <!--<%= f.label :personalhigiene_id %><br>
-    <!--<%= f.text_field :personalhigiene_id %>
-  </div>-->
+ 
   <div class="actions">
     <%= f.submit %>
   </div>

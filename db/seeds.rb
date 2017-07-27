@@ -6,16 +6,22 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Personalhigiene.create(descrpition: 'Assist with Shower/Bath ')
-Personalhigiene.create(descrpition: 'Assist with Toileting')
-Personalhigiene.create(descrpition: 'Assist with Dressing/Grooming')
-Personalhigiene.create(descrpition: 'Incontinence Care')
+#Personalhigiene.create(descrpition: 'Assist with Shower/Bath ')
+#Personalhigiene.create(descrpition: 'Assist with Toileting')
+#Personalhigiene.create(descrpition: 'Assist with Dressing/Grooming')
+#Personalhigiene.create(descrpition: 'Incontinence Care')
+#
+#Housekeeping.create(description: 'Change Bedclothes ')
+#Housekeeping.create(description: 'Laundry/Ironing ')
+#Housekeeping.create(description: 'Clean kitchen/Bathroom ')
+#Housekeeping.create(description: 'Vacuum/Dust/Rubbish Removal ')
+#Housekeeping.create(description: 'Meal Preparation ')
+#
+#Extra.create(description: 'Transport Client ')
+#Extra.create(description: 'Errands / Shopping ')
+#Extra.create(description: 'Companionship Activities ')
+#Extra.create(description: 'Acompany Walking ')
 
-Housekeeping.create(description: 'Change Bedclothes ')
-Housekeeping.create(description: 'Laundry/Ironing ')
-Housekeeping.create(description: 'Clean kitchen/Bathroom ')
-Housekeeping.create(description: 'Vacuum/Dust/Rubbish Removal ')
-Housekeeping.create(description: 'Meal Preparation ')
 
 
 
