@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170726142638) do
+ActiveRecord::Schema.define(version: 20170727132240) do
 
   create_table "activities", force: :cascade do |t|
     t.date     "date"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20170726142638) do
   add_index "activities", ["client_id"], name: "index_activities_on_client_id"
   add_index "activities", ["user_id"], name: "index_activities_on_user_id"
 
+  create_table "careplans", force: :cascade do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "clients", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
@@ -36,6 +43,7 @@ ActiveRecord::Schema.define(version: 20170726142638) do
     t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "careplan"
   end
 
   create_table "extras", force: :cascade do |t|

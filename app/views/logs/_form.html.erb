@@ -51,14 +51,14 @@
 
     <div class="col-md-4">
       <div class="field">
-        <%= f.label :Important_Info %><br>
-        <%= f.text_field :imp_info %>
+        <div class="box_outline box_outline_red"><%= f.label :Important_Info %><br></div>
+        <div class="box_outline box_outline_red"><%= f.text_area(:imp_info, size: '50x10') %></div>
       </div>
     </div>
 
   </div><!-- end row 2: client & important information -->
 
-  <div class="row">
+  <div class="row box_outline box_outline_grey">
 
     <div class="col-md-3">
       <div class="field">
@@ -100,56 +100,66 @@
 
   <div class="row">
     <div class="col-md-6">
-      <div class="field">
-        <%= f.label :Breakfast %><br>
-        <%= f.text_field :fd_breaktime %>
+      <div class="box_outline box_outline_grey">
+        Food / Drinks Log
       </div>
-      <div class="field">
-        <%= f.label :AM_snack %><br>
-        <%= f.text_field :am_snack %>
-      </div>
-      <div class="field">
-        <%= f.label :Lunch %><br>
-        <%= f.text_field :fd_lunch %>
-      </div>
-      <div class="field">
-        <%= f.label :PM_snack %><br>
-        <%= f.text_field :pm_snack %>
-      </div>
-      <div class="field">
-        <%= f.label :Dinner %><br>
-        <%= f.text_field :dinner %>
-      </div>
-      <div class="field">
-        <%= f.label :Night_snack %><br>
-        <%= f.text_field :ngt_nack %>
+      <div class="box_outline box_outline_grey alternate_row_colors">
+        <div class="field">
+          <%= f.label :Breakfast %><br>
+          <%= f.text_field :fd_breaktime %>
+        </div>
+        <div class="field">
+          <%= f.label :AM_snack %><br>
+          <%= f.text_field :am_snack %>
+        </div>
+        <div class="field">
+          <%= f.label :Lunch %><br>
+          <%= f.text_field :fd_lunch %>
+        </div>
+        <div class="field">
+          <%= f.label :PM_snack %><br>
+          <%= f.text_field :pm_snack %>
+        </div>
+        <div class="field">
+          <%= f.label :Dinner %><br>
+          <%= f.text_field :dinner %>
+        </div>
+        <div class="field">
+          <%= f.label :Night_snack %><br>
+          <%= f.text_field :ngt_nack %>
+        </div>
       </div>
     </div>
     <div class="col-md-6">
-      <div class="field">
-        <%= f.label :med_breaktime %><br>
-        <%= f.text_field :med_breaktime %>
+      <div class="box_outline box_outline_grey">
+        Medication Log
       </div>
-      <div class="field">
-        <%= f.label :med_lunch %><br>
-        <%= f.text_field :med_lunch %>
-      </div>
-      <div class="field">
-        <%= f.label :med_eventime %><br>
-        <%= f.text_field :med_eventime %>
-      </div>
-      <div class="field">
-        <%= f.label :med_ngtime %><br>
-        <%= f.text_field :med_ngtime %>
+      <div class="box_outline box_outline_grey alternate_row_colors">
+        <div class="field">
+          <%= f.label :med_breaktime %><br>
+          <%= f.text_field :med_breaktime %>
+        </div>
+        <div class="field">
+          <%= f.label :med_lunch %><br>
+          <%= f.text_field :med_lunch %>
+        </div>
+        <div class="field">
+          <%= f.label :med_eventime %><br>
+          <%= f.text_field :med_eventime %>
+        </div>
+        <div class="field">
+          <%= f.label :med_ngtime %><br>
+          <%= f.text_field :med_ngtime %>
+        </div>
       </div>
     </div>
   </div><!-- end row 4: food & medication -->
 
   <div class="row">
     <div class="col-md-12">
-      <div class="field">
+      <div class="field box_outline box_outline_red">
         <%= f.label :Description %><br>
-        <%= f.text_field :desc %>
+        <%= f.text_area(:desc, size: '50x10') %>
       </div>
     </div>
   </div>
@@ -161,8 +171,6 @@
       </div>
     </div>
   </div>
-
-
 
   <% end %>
 </div>

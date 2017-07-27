@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'careplans/index', to: 'careplans#index'
+
+  get 'careplans/new'
+
+  get 'careplans/create'
+
+  get 'careplans/destroy'
+
   resources :logs
   resources :logs
   resources :logs
