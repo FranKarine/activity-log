@@ -4,18 +4,17 @@ class CareplansController < ApplicationController
   end
 
   def new
-    @careplans = Careplan.new
+    @careplan = Careplan.new
   end
 
   def create
     @careplan = Careplan.new(careplan_params)
 
     if @careplan.save
-      redirect_to careplan_path, notice: "The careplan #{@careplan.name} has been uploaded."
+      redirect_to careplans_path, notice: "The careplan #{@careplan.name} has been uploaded."
     else
       render "new"
     end
-
   end
 
   def destroy
@@ -25,8 +24,7 @@ class CareplansController < ApplicationController
   end
 
 private
-  def careplan _params
+  def careplan_params
     params.require(:careplan).permit(:name, :attachment)
   end
 end
-  

@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'cplans/index'
+
+  get 'cplans/new'
+
+  get 'cplans/create'
+
+  get 'cplans/destroy'
+
   get 'careplans/index', to: 'careplans#index'
 
   get 'careplans/new'
@@ -8,6 +16,10 @@ Rails.application.routes.draw do
 
   get 'careplans/destroy'
 
+  resources :careplans, only: [:index, :new, :create, :destroy]
+  
+  
+  
   resources :logs
   resources :logs
   resources :logs
@@ -22,6 +34,7 @@ Rails.application.routes.draw do
   
   get '/logs', to: 'logs#new'
   root 'logs#new'
+  
   
   get 'activities', to: 'activities#new'
   'activities#new'

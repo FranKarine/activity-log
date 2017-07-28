@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 .box_outline {
-  border: 2px solid;
+  border: 3px solid;
 }
 
 .box_outline_red {
@@ -32,6 +32,7 @@
 
 .row {
   margin-top: 2em;
+  padding: 2em 0;
 }
 
 #log_desc, #log_imp_info {
@@ -41,4 +42,12 @@
 
 .actions {
   text-align: right;
+}
+
+.field {
+  padding: 1em;
+}
+
+.box_header_bg {
+  background-color: #F2F2F2;
 }
