@@ -20,7 +20,8 @@
 <div class="row">
     <div class="col-md-12" align=left>    
             <ul class="nav nav-tabs" align=right>
-              <li role="presentation"> <li><%= link_to "Careplan", careplans_index_path %></li></li>
+              <li role="presentation"><%= link_to 'New Log', new_log_path %></li>
+              <li role="presentation"><%= link_to "Careplan", careplans_index_path %></li>
   		        <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
   		    </ul>
   	</div>
@@ -86,4 +87,3 @@
 
 <br>
 
-<%= link_to 'New Log', new_log_path %>

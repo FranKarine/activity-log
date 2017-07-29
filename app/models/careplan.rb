@@ -7,3 +7,4 @@ class Careplan < ActiveRecord::Base
     validates :name, presence: true # To make sure the client’s name is present.
      
 end
+
