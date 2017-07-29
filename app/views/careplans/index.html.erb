@@ -3,11 +3,11 @@
             <%= image_tag 'smalllogo.png' %>
         </div>
         <div class="col-md-9" align=center>
-            <h1>Client Activity Log</h1>
+            <h1>Careplans</h1>
          </div>
 </header>
 
-   
+  
 <div class="row">
     <div class="col-md-12" align=left>    
             <ul class="nav nav-tabs" align=right>
@@ -17,7 +17,14 @@
   		    </ul>
   	</div>
 </div>
-            
+
+    <!-- Search form-->
+  <ip id='notice'><%=notice %></p>
+      <%= form_tag(careplans_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Careplan by client name" %>
+      <%= submit_tag "Search" %>
+  <% end %>
+  <!-- End of search form-->         
 
 <% if !flash[:notice].blank? %>
   <div class="alert alert-info">

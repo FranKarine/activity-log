@@ -5,6 +5,11 @@ class LogsController < ApplicationController
   # GET /logs.json
   def index
     @logs = Log.all
+    if params[:search]
+      @logs = Log.search(params[:search]).order("created_at DESC")
+    else
+      @logs = Log.all.order('created_at DESC')
+    end
   end
 
   # GET /logs/1

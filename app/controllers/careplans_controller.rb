@@ -1,6 +1,11 @@
 class CareplansController < ApplicationController
   def index
     @careplans = Careplan.all
+    if params[:search]
+      @careplans = Careplan.search(params[:search]).order("created_at DESC")
+    else
+      @careplans = Careplan.all.order('created_at DESC')
+    end
   end
 
   def new
