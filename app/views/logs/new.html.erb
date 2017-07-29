@@ -13,7 +13,7 @@
             <ul class="nav nav-tabs" align=right>
                 <li><%= link_to "History", logs_path %></a></li>
   		        <li><%= link_to "Careplan", careplans_index_path %></li>
-  		        <li role="presentation"><%= link_to "logout", destroy_user_session_path, method: :delete %></</li>
+  		        <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></</li>
   		    </ul>
   	</div>
 </div>
@@ -21,4 +21,3 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', logs_path %>

@@ -1,13 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'cplans/index'
-
-  get 'cplans/new'
-
-  get 'cplans/create'
-
-  get 'cplans/destroy'
-
+  
   get 'careplans/index', to: 'careplans#index'
 
   get 'careplans/new'
@@ -26,6 +19,7 @@ Rails.application.routes.draw do
   resources :logs
   resources :logs
   resources :logs
+  
   resources :logs
   resources :activities
   resources :clients
@@ -34,6 +28,8 @@ Rails.application.routes.draw do
   
   get '/logs', to: 'logs#new'
   root 'logs#new'
+  
+  get 'users/index', to: 'users#index'
   
   
   get 'activities', to: 'activities#new'
