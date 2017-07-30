@@ -37,7 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
-    autoprefixer-rails (6.4.0.3)
+    autoprefixer-rails (7.1.2.3)
       execjs
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
@@ -62,10 +62,10 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     debug_inspector (0.0.3)
-    devise (4.2.1)
+    devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 5.1)
+      railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
     erubis (2.7.0)
@@ -96,7 +96,7 @@ GEM
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     orm_adapter (0.5.0)
-    pg (0.18.4)
+    pg (0.21.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (1.6.8)
@@ -136,8 +136,9 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rdoc (4.3.0)
-    responders (2.3.0)
-      railties (>= 4.2.0, < 5.1)
+    responders (2.4.0)
+      actionpack (>= 4.2.0, < 5.3)
+      railties (>= 4.2.0, < 5.3)
     sass (3.5.1)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -164,7 +165,7 @@ GEM
     sqlite3 (1.3.13)
     thor (0.19.4)
     thread_safe (0.3.6)
-    tilt (2.0.7)
+    tilt (2.0.8)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
@@ -192,11 +193,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
-<<<<<<< HEAD
-  pundit
-=======
   pundit (~> 1.1)
->>>>>>> 90fc6bb03e09fd04505562c5c1ed2cf10111c49b
   rails (= 4.2.5)
   rails_12factor
   sass-rails (~> 5.0)
@@ -211,4 +208,4 @@ RUBY VERSION
    ruby 2.3.0p0
 
 BUNDLED WITH
-   1.14.6
+   1.15.3

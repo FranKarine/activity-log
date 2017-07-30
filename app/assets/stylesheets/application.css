@@ -13,7 +13,20 @@
  *= require_tree .
  *= require_self
  */
+a.btn {
+  color: #fff;
+}
+a:visited {
+  background-color: initial;
+}
 #home-logo:hover {
   text-decoration: none;
   background-color: transparent;
+}
+.default-links a:hover {
+  color: purple;
+  background-color: transparent;
+}
+.default-links a {
+  margin-right: 5px;
 }

@@ -1,4 +1,5 @@
 <a href="<%= root_path %>" class="col-md-2" id="home-logo" align="left"><%= image_tag 'smalllogo.png' %></a>
+
 <% if yield(content_for?(:page_description)) %>
   <%= yield(:page_description) %>
 <% end %>
@@ -11,7 +12,3 @@
     </ul>
   </div>
 </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> 90fc6bb03e09fd04505562c5c1ed2cf10111c49b
