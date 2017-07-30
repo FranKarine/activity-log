@@ -10,7 +10,65 @@
   <% end %>
   <!-- End of search form-->
 
+<<<<<<< HEAD
 <p id="notice"><%= notice %></p>
+=======
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Cargiver name</th>
+      <th>Data</th>
+      <th>Finish time</th>
+      <th>Start time</th>
+      <th>Breakfast time</th>
+      <th>Am snack</th>
+      <th>Lunch</th>
+      <th>Pm snack</th>
+      <th>Dinner</th>
+      <th>Night nack</th>
+      <th>Breakfast time</th>
+      <th>Lunch time</th>
+      <th>Important information</th>
+      <th>Description</th>
+      <th>Extra</th>
+      <th>Housekeeping</th>
+      <th>Personalhigiene</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logs.each do |log| %>
+      <tr>
+        <td><%= log.client %></td>
+        <td><%= log.carg_name %></td>
+        <td><%= log.data %></td>
+        <td><%= log.f_time %></td>
+        <td><%= log.s_time %></td>
+        <td><%= log.fd_breaktime %></td>
+        <td><%= log.am_snack %></td>
+        <td><%= log.fd_lunch %></td>
+        <td><%= log.pm_snack %></td>
+        <td><%= log.dinner %></td>
+        <td><%= log.ngt_nack %></td>
+        <td><%= log.med_breaktime %></td>
+        <td><%= log.med_lunch %></td>
+        <td><%= log.med_eventime %></td>
+        <td><%= log.med_ngtime %></td>
+        <td><%= log.imp_info %></td>
+        <td><%= log.desc %></td>
+        <td><%= log.extra %></td>
+        <td><%= log.housekeeping %></td>
+        <td><%= log.personalhigiene %></td>
+        <td><%= link_to 'Show', log %></td>
+        <td><%= link_to 'Edit', edit_log_path(log) %></td>
+        <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+>>>>>>> 90fc6bb03e09fd04505562c5c1ed2cf10111c49b
 
 
 <style>

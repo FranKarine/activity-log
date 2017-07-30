@@ -1,4 +1,22 @@
-<h1>Editing Log</h1>
+<header class="w3-container w3-teal">
+        <div class="col-md-2" align=left>
+            <%= image_tag 'smalllogo.png' %>
+        </div>
+        <div class="col-md-9" align=center>
+            <h1>Editing Log</h1>
+         </div>
+</header>
+
+  
+<div class="row">
+    <div class="col-md-12" align=left>    
+            <ul class="nav nav-tabs" align=right>
+                <li><%= link_to "History", logs_path %></a></li>
+  		        <li><%= link_to 'New Log', new_log_path %>
+  		        <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></</li>
+  		    </ul>
+  	</div>
+</div>
 
 <%= render 'form' %>
 

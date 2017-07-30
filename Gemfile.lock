@@ -192,7 +192,11 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+<<<<<<< HEAD
   pundit
+=======
+  pundit (~> 1.1)
+>>>>>>> 90fc6bb03e09fd04505562c5c1ed2cf10111c49b
   rails (= 4.2.5)
   rails_12factor
   sass-rails (~> 5.0)

@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 <li><%= link_to 'New Log', new_log_path %></li>
 <li><%= link_to "History", logs_path %></a></li>
 <li><%= link_to 'Careplans', careplans_path %></li>
 <li><%= link_to 'Clients', clients_path %></li>
+=======
+<li><%= link_to 'logs', logs_path %></li>
+<!--<li><%= link_to 'activities', activities_path %></li>-->
+<li><%= link_to 'careplans', careplans_path %></li>
+<li><%= link_to 'clients', clients_path %></li>
+
+>>>>>>> 90fc6bb03e09fd04505562c5c1ed2cf10111c49b
 <li><%= link_to 'Edit account', edit_user_registration_path %></li>
 
 <% if current_user.try(:admin?) %>
@@ -9,6 +17,9 @@
 <% end %>
 
 <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 90fc6bb03e09fd04505562c5c1ed2cf10111c49b

@@ -1,11 +1,21 @@
 source 'https://rubygems.org'
 ruby '2.3.0'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 90fc6bb03e09fd04505562c5c1ed2cf10111c49b
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'devise'
+<<<<<<< HEAD
 gem 'pundit'
+=======
+# Object oriented authorization for Rails applications
+gem 'pundit', '~> 1.1'
+
+>>>>>>> 90fc6bb03e09fd04505562c5c1ed2cf10111c49b
 gem 'carrierwave', '~> 0.9'
 # Use SCSS for stylesheets
 

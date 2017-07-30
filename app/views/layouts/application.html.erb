@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <head>
     <title>Client Activity Log</title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -13,6 +14,20 @@
           <%= render 'layouts/navigation' %>
         </header>
         <% end %>
+=======
+<head>
+  <title>Client Activity Log</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container" style="padding-top:20px;">
+<%= yield %>
+</div>
+</body>
+</html>
+>>>>>>> 90fc6bb03e09fd04505562c5c1ed2cf10111c49b
 
       <main role="main">
          <%= render 'layouts/messages' %>

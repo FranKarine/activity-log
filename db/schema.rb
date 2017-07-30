@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170730151543) do
+=======
+ActiveRecord::Schema.define(version: 20170729201647) do
+>>>>>>> 90fc6bb03e09fd04505562c5c1ed2cf10111c49b
 
   create_table "activities", force: :cascade do |t|
     t.date     "date"
