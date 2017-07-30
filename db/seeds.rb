@@ -22,6 +22,26 @@
 #Extra.create(description: 'Companionship Activities ')
 #Extra.create(description: 'Acompany Walking ')
 
+puts 'Creating default users...'
 
+admin = User.find_or_create_by!(email: "admin@homeinstead.ie") do |user|
+  user.password = "123456"
+  user.password_confirmation = "123456"
+  user.admin!
+end
+puts 'CREATED admin USER: ' << admin.email
 
+customer = User.find_or_create_by!(email: "customer@homeinstead.ie") do |user|
+  user.password = "123456"
+  user.password_confirmation = "123456"
+  user.customer!
+end
+puts 'CREATED customer USER: ' << customer.email
 
+caregiver = User.find_or_create_by!(email: "caregiver@homeinstead.ie") do |user|
+  user.password = "123456"
+  user.password_confirmation = "123456"
+  user.caregiver!
+end
+
+puts 'CREATED caregiver USER: ' << caregiver.email

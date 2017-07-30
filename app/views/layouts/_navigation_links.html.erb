@@ -1,0 +1,12 @@
+<li><%= link_to 'logs', logs_path %></li>
+<!--<li><%= link_to 'activities', activities_path %></li>-->
+<li><%= link_to 'careplans', careplans_path %></li>
+<li><%= link_to 'clients', clients_path %></li>
+
+<li><%= link_to 'Edit account', edit_user_registration_path %></li>
+
+<% if current_user.try(:admin?) %>
+  <li><%= link_to 'Users', users_path %></li>
+<% end %>
+
+<li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
