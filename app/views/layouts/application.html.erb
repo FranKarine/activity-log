@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Careplan</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div class="container" style="padding-top:20px;">
-<%= yield %>
-</div>
-</body>
-</html>
+  <head>
+    <title>Client Activity Log</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <% if user_signed_in? %>
+        <header class="w3-container w3-teal">
+          <%= render 'layouts/navigation' %>
+        </header>
+        <% end %>
 
+      <main role="main">
+         <%= render 'layouts/messages' %>
+         <%= yield %>
+      </main>
+    </div>
+  </body>
+</html>

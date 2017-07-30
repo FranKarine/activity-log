@@ -6,22 +6,42 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#Personalhigiene.create(descrpition: 'Assist with Shower/Bath ')
-#Personalhigiene.create(descrpition: 'Assist with Toileting')
-#Personalhigiene.create(descrpition: 'Assist with Dressing/Grooming')
-#Personalhigiene.create(descrpition: 'Incontinence Care')
-#
-#Housekeeping.create(description: 'Change Bedclothes ')
-#Housekeeping.create(description: 'Laundry/Ironing ')
-#Housekeeping.create(description: 'Clean kitchen/Bathroom ')
-#Housekeeping.create(description: 'Vacuum/Dust/Rubbish Removal ')
-#Housekeeping.create(description: 'Meal Preparation ')
-#
-#Extra.create(description: 'Transport Client ')
-#Extra.create(description: 'Errands / Shopping ')
-#Extra.create(description: 'Companionship Activities ')
-#Extra.create(description: 'Acompany Walking ')
+Personalhigiene.create(descrpition: 'Assist with Shower/Bath ')
+Personalhigiene.create(descrpition: 'Assist with Toileting')
+Personalhigiene.create(descrpition: 'Assist with Dressing/Grooming')
+Personalhigiene.create(descrpition: 'Incontinence Care')
 
+Housekeeping.create(description: 'Change Bedclothes ')
+Housekeeping.create(description: 'Laundry/Ironing ')
+Housekeeping.create(description: 'Clean kitchen/Bathroom ')
+Housekeeping.create(description: 'Vacuum/Dust/Rubbish Removal ')
+Housekeeping.create(description: 'Meal Preparation ')
 
+Extra.create(description: 'Transport Client ')
+Extra.create(description: 'Errands / Shopping ')
+Extra.create(description: 'Companionship Activities ')
+Extra.create(description: 'Acompany Walking ')
 
+puts 'Creating default users...'
 
+admin = User.find_or_create_by!(email: "admin@homeinstead.ie") do |user|
+  user.password = "123456"
+  user.password_confirmation = "123456"
+  user.admin!
+end
+puts 'CREATED admin USER: ' << admin.email
+
+customer = User.find_or_create_by!(email: "customer@homeinstead.ie") do |user|
+  user.password = "123456"
+  user.password_confirmation = "123456"
+  user.customer!
+end
+puts 'CREATED customer USER: ' << customer.email
+
+caregiver = User.find_or_create_by!(email: "caregiver@homeinstead.ie") do |user|
+  user.password = "123456"
+  user.password_confirmation = "123456"
+  user.caregiver!
+end
+
+puts 'CREATED caregiver USER: ' << caregiver.email

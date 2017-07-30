@@ -1,28 +1,16 @@
-<p id="notice"><%= notice %></p>
+<% content_for :page_description do %>
+  <div class="col-md-7" align=center><h1>Clients</h1></div>
+<% end %>
+
+ <!-- Search form-->
+  <ip id='notice'><%=notice %></p>
+      <%= form_tag(clients_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search client by name" %>
+      <%= submit_tag "Search" %>
+  <% end %>
+  <!-- End of search form-->
 
 <p id="notice"><%= notice %></p>
-
-<header class="w3-container w3-teal">
-        <div class="col-md-2" align="left">
-            <%= image_tag 'smalllogo.png' %>
-        </div>
-        <div class="col-md-7" align=center>
-            <h1>Listing Clients</h1>
-         </div>
-</header>
-
-<div class="row">
-    <div class="col-md-12" align=left>    
-            <ul class="nav nav-tabs" align=right>
-                <li><%= link_to "History", logs_path %></li>
-  		        <li><%= link_to "Careplan", careplans_index_path %></li>
-  		        <li><%= link_to 'New Log', new_log_path %></li>
-  		        <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></</li>
-  		    </ul>
-  	</div>
-</div>
-
-
 
 <table>
   <thead>

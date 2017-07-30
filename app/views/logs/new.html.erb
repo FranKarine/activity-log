@@ -1,23 +1,8 @@
-<header class="w3-container w3-teal">
-        <div class="col-md-2" align=left>
-            <%= image_tag 'smalllogo.png' %>
-        </div>
-        <div class="col-md-7" align=center>
-            <h1>Client Activity Log</h1>
-         </div>
-</header>
+<% content_for :page_description do %>
+  <div class="col-md-7" align=center><h1>Client Activity Log</h1></div>
+<% end %>
 
-   
-<div class="row">
-    <div class="col-md-12" align=left>    
-            <ul class="nav nav-tabs" align=right>
-                <li><%= link_to "History", logs_path %></a></li>
-  		        <li><%= link_to "Careplan", careplans_index_path %></li>
-  		        <li role="presentation"><%= link_to "Logout", destroy_user_session_path, method: :delete %></</li>
-  		    </ul>
-  	</div>
-</div>
-            
+<p id="notice"><%= notice %></p>
 
 <%= render 'form' %>
 

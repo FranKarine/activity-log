@@ -5,7 +5,7 @@ ruby '2.3.0'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
 gem 'devise'
-gem "pundit"
+gem 'pundit'
 gem 'carrierwave', '~> 0.9'
 # Use SCSS for stylesheets
 

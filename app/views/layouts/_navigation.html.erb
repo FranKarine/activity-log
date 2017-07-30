@@ -1,0 +1,14 @@
+<a href="<%= root_path %>" class="col-md-2" id="home-logo" align="left"><%= image_tag 'smalllogo.png' %></a>
+<% if yield(content_for?(:page_description)) %>
+  <%= yield(:page_description) %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12" align=left>
+    <ul class="nav nav-tabs" align=right>
+      <%= render 'layouts/navigation_links' %>
+      <span class="hidden-xs"><%= current_user.email %></span>
+    </ul>
+  </div>
+</div>
+
