@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  link_opts:
+    delete:
+      confirm: "Would you like to delete it?"

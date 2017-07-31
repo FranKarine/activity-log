@@ -1,109 +1,113 @@
-<p>
-  <strong>Client:</strong>
-  <%= @log.client %>
-</p>
+<style>
+  .more_info {
+    height: 0;
+    overflow: hidden;
+    animation-duration: 1s;
+  }
+</style>
 
-<p>
-  <strong>Carg name:</strong>
-  <%= @log.carg_name %>
-</p>
+<div class="container-fluid">
+  <div class="client_card">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="client_name"><%= @log.client %></p>
+        <p class="carer_name">cared for by <%= @log.carg_name %></p>
+      </div>
+      <div class="col-md-5">
+        <p>
+          <%= @log.data %><br />
+          <%= @log.s_time %> - <%= @log.f_time %>
+        </p>
+      </div>
+      <div class="col-md-1">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= @log.imp_info %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        Generate this ...
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <button class="show_more_info">Show more</button>
+      </div>
+      <div class="col-md-4">
+        <%= link_to 'Edit', edit_log_path(@log) %>
+      </div>
+      <div class="col-md-4">
+        <%= link_to 'Destroy', @log, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+    <div class="more_info">
+      <div class="row">
+        <div class="col-md-12">
+          <%= @log.desc %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3><i class="fa fa-cutlery" aria-hidden="true"></i> Food</h3>
+          <ul>
+            <li>Breakfast: <%= @log.fd_breaktime %></li>
+            <li>AM snack: <%= @log.am_snack %></li>
+            <li>Lunch: <%= @log.fd_lunch %></li>
+            <li>PM snack: <%= @log.pm_snack %></li>
+            <li>Dinner: <%= @log.dinner %></li>
+            <li>Night snack: <%= @log.ngt_nack  %></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <h3><i class="fa fa-user-md" aria-hidden="true"></i> Medication</h3>
+          <ul>
+            <li>Breakfast: <%= @log.med_breaktime %></li>
+            <li>Lunch: <%= @log.med_lunch %></li>
+            <li>Evening: <%= @log.med_eventime %></li>
+            <li>Night time: <%= @log.med_ngtime %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <h3><i class="fa fa-user" aria-hidden="true"></i> Extra's</h3>
+          <% @log.personalhigiene.each do |ph| %>
+            <%= ph.description %>
+          <% end %>
+        </div>
+        <div class="col-md-4">
+          <h3><i class="fa fa-home" aria-hidden="true"></i> Extra's</h3>
+          <% @log.housekeeping.each do |ph| %>
+            <%= ph.description %>
+          <% end %>
+        </div>
+        <div class="col-md-4">
+          <h3><i class="fa fa-plus" aria-hidden="true"></i> Extra's</h3>
+          <% @log.extra.each do |ph| %>
+            <%= ph.description %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Data:</strong>
-  <%= @log.data %>
-</p>
-
-<p>
-  <strong>F time:</strong>
-  <%= @log.f_time %>
-</p>
-
-<p>
-  <strong>S time:</strong>
-  <%= @log.s_time %>
-</p>
-
-<p>
-  <strong>Fd breaktime:</strong>
-  <%= @log.fd_breaktime %>
-</p>
-
-<p>
-  <strong>Am snack:</strong>
-  <%= @log.am_snack %>
-</p>
-
-<p>
-  <strong>Fd lunch:</strong>
-  <%= @log.fd_lunch %>
-</p>
-
-<p>
-  <strong>Pm snack:</strong>
-  <%= @log.pm_snack %>
-</p>
-
-<p>
-  <strong>Dinner:</strong>
-  <%= @log.dinner %>
-</p>
-
-<p>
-  <strong>Ngt nack:</strong>
-  <%= @log.ngt_nack %>
-</p>
-
-<p>
-  <strong>Med breaktime:</strong>
-  <%= @log.med_breaktime %>
-</p>
-
-<p>
-  <strong>Med lunch:</strong>
-  <%= @log.med_lunch %>
-</p>
-
-<p>
-  <strong>Med eventime:</strong>
-  <%= @log.med_eventime %>
-</p>
-
-<p>
-  <strong>Med ngtime:</strong>
-  <%= @log.med_ngtime %>
-</p>
-
-<p>
-  <strong>Imp info:</strong>
-  <%= @log.imp_info %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @log.desc %>
-</p>
-
-<p>
-  <strong>Extra:</strong>
- <% @log.extra.each do |ph| %>
-     <%= ph.description %>
-      <% end %>
-</p>
-
-<p>
-  <strong>Housekeeping:</strong>
-  <% @log.housekeeping.each do |ph| %>
-     <%= ph.description %>
-      <% end %>
-
-</p>
-
-<p>
-  <strong>Personalhigiene:</strong>
- <% @log.personalhigiene.each do |ph| %>
-     <%= ph.description %>
-      <% end %>
-</p>
+<script type="text/javascript">
+  $('.client_card .show_more_info').on('click', function() {
+    $show_more = $(this).parents('.client_card').eq(0).find('.more_info');
+    if ($show_more.css('height') === '0') {
+      $show_more.css('height', '100%');
+      $(this).text('Show more');
+    } else {
+      $show_more.css('height', '0');
+      $(this).text('Show less');
+    }
+  });
+</script>
 
 <%= link_to 'Edit', edit_log_path(@log) %> |
 <%= link_to 'Back', logs_path %>
