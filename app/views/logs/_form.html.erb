@@ -1,182 +1,174 @@
 <div class="container">
-
   <%= form_for(@log) do |f| %>
 
-  <% if @log.errors.any? %>
-  <div class="row">
-    <div id="error_explanation" class="col-md-12">
-      <h2><%= pluralize(@log.errors.count, "error") %> prohibited this log from being saved:</h2>
-      <ul>
-        <% @log.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div><!-- end row 1: form errors -->
-  <% end %>
-
-  <div class="row">
-    <div class="col-md-7">
-
-      <div class="field">
-        <%= f.label :client %><br>
-        <%= f.text_field :client %>
-      </div>
-      <div class="field">
-        <%= f.label :Caregiver_name %><br>
-        <%= f.text_field :carg_name %>
-      </div>
-
+    <% if @log.errors.any? %>
       <div class="row">
-        <div class="col-md-3">
-          <div class="field">
-            <%= f.label :Data %><br>
-            <%= f.text_field :data %>
-          </div>
+        <div id="error_explanation" class="col-md-12">
+          <h2><%= pluralize(@log.errors.count, "error") %> prohibited this log from being saved:</h2>
+          <ul>
+            <% @log.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
         </div>
-        <div class="col-md-3">
-          <div class="field">
-            <%= f.label :Start_time %><br>
-            <%= f.text_field :s_time %>
-          </div>
+      </div><!-- end row 1: form errors -->
+    <% end %>
+
+    <div class="row">
+      <div class="col-md-7">
+        <div class="field">
+          <%= f.label :client %><br>
+          <%= f.text_field :client %>
         </div>
-        <div class="col-md-3">
-          <div class="field">
-            <%= f.label :Finish_time %><br>
-            <%= f.text_field :f_time %>
-          </div>
+        <div class="field">
+          <%= f.label :Caregiver_name %><br>
+          <%= f.text_field :carg_name %>
         </div>
-      </div>
-    </div>
 
-    <div class="col-md-5">
-      <div class="field">
-        <div class="box_outline box_outline_red box_header"><%= f.label :Important_Info %><br></div>
-        <div class="box_outline box_outline_red"><%= f.text_area(:imp_info, size: '50x10') %></div>
-      </div>
-    </div>
-
-  </div><!-- end row 2: client & important information -->
-
-  <div class="row box_outline box_outline_grey">
-
-    <div class="col-md-4">
-      <div class="field">
-        <%= f.label "Personal Hygiene" %><br />
-        <%= f.collection_check_boxes :personalhigiene_ids, Personalhigiene.all, :id, :descrpition do |b| %>
-        <div class="collection-check-box">
-          <%= b.check_box %>
-          <%= b.label %>
-        </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="field">
-        <%= f.label "Housekeeping" %><br />
-        <%= f.collection_check_boxes :housekeeping_ids, Housekeeping.all, :id, :description do |b| %>
-        <div class="collection-check-box">
-          <%= b.check_box %>
-          <%= b.label %>
-        </div>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="field">
-        <%= f.label "Extras" %><br />
-        <%= f.collection_check_boxes :extra_ids, Extra.all, :id, :description do |b| %>
-        <div class="collection-check-box">
-          <%= b.check_box %>
-          <%= b.label %>
-        </div>
-        <% end %>
-      </div>
-    </div>
-    
-  </div><!-- end row 3: personal hygiene, housekeeping, extras -->
-
-  <div class="row">
-    <div class="col-md-12"><!--putting row in row here because it's the easiest way to align everything -->
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="box_outline box_outline_grey box_header box_header_bg">
-            Food / Drinks Log
-          </div>
-          <div class="box_outline box_outline_grey alternate_row_colors">
+        <div class="row">
+          <div class="col-md-3">
             <div class="field">
-              <%= f.label :Breakfast %><br>
-              <%= f.text_field :fd_breaktime %>
-            </div>
-            <div class="field">
-              <%= f.label :AM_snack %><br>
-              <%= f.text_field :am_snack %>
-            </div>
-            <div class="field">
-              <%= f.label :Lunch %><br>
-              <%= f.text_field :fd_lunch %>
-            </div>
-            <div class="field">
-              <%= f.label :PM_snack %><br>
-              <%= f.text_field :pm_snack %>
-            </div>
-            <div class="field">
-              <%= f.label :Dinner %><br>
-              <%= f.text_field :dinner %>
-            </div>
-            <div class="field">
-              <%= f.label :Night_snack %><br>
-              <%= f.text_field :ngt_nack %>
+              <%= f.label :Data %><br>
+              <%= f.text_field :data %>
             </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="box_outline box_outline_grey box_header box_header_bg">
-            Medication Log
+          <div class="col-md-3">
+            <div class="field">
+              <%= f.label :Start_time %><br>
+              <%= f.text_field :s_time %>
+            </div>
           </div>
-          <div class="box_outline box_outline_grey alternate_row_colors">
+          <div class="col-md-3">
             <div class="field">
-              <%= f.label :med_breaktime %><br>
-              <%= f.text_field :med_breaktime %>
-            </div>
-            <div class="field">
-              <%= f.label :med_lunch %><br>
-              <%= f.text_field :med_lunch %>
-            </div>
-            <div class="field">
-              <%= f.label :med_eventime %><br>
-              <%= f.text_field :med_eventime %>
-            </div>
-            <div class="field">
-              <%= f.label :med_ngtime %><br>
-              <%= f.text_field :med_ngtime %>
+              <%= f.label :Finish_time %><br>
+              <%= f.text_field :f_time %>
             </div>
           </div>
         </div>
       </div>
 
-    </div>
-  </div><!-- end row 4: food & medication -->
+      <div class="col-md-5">
+        <div class="field">
+          <div class="box_outline box_outline_red box_header"><%= f.label :Important_Info %><br></div>
+          <div class="box_outline box_outline_red"><%= f.text_area(:imp_info, size: '50x10') %></div>
+        </div>
+      </div>
+    </div><!-- end row 2: client & important information -->
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="field box_outline box_outline_red">
-        <%= f.label :Description %><br>
-        <%= f.text_area(:desc, size: '50x10') %>
+    <div class="row box_outline box_outline_grey">
+      <div class="col-md-4">
+        <div class="field">
+          <%= f.label "Personal Hygiene" %><br />
+          <%= f.collection_check_boxes :personalhigiene_ids, Personalhigiene.all, :id, :descrpition do |b| %>
+            <div class="collection-check-box">
+              <%= b.check_box %>
+              <%= b.label %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="field">
+          <%= f.label "Housekeeping" %><br />
+          <%= f.collection_check_boxes :housekeeping_ids, Housekeeping.all, :id, :description do |b| %>
+            <div class="collection-check-box">
+              <%= b.check_box %>
+              <%= b.label %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="field">
+          <%= f.label "Extras" %><br />
+          <%= f.collection_check_boxes :extra_ids, Extra.all, :id, :description do |b| %>
+            <div class="collection-check-box">
+              <%= b.check_box %>
+              <%= b.label %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div><!-- end row 3: personal hygiene, housekeeping, extras -->
+
+    <div class="row">
+      <div class="col-md-12"><!--putting row in row here because it's the easiest way to align everything -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="box_outline box_outline_grey box_header box_header_bg">
+              Food / Drinks Log
+            </div>
+            <div class="box_outline box_outline_grey alternate_row_colors">
+              <div class="field">
+                <%= f.label :Breakfast %><br>
+                <%= f.text_field :fd_breaktime %>
+              </div>
+              <div class="field">
+                <%= f.label :AM_snack %><br>
+                <%= f.text_field :am_snack %>
+              </div>
+              <div class="field">
+                <%= f.label :Lunch %><br>
+                <%= f.text_field :fd_lunch %>
+              </div>
+              <div class="field">
+                <%= f.label :PM_snack %><br>
+                <%= f.text_field :pm_snack %>
+              </div>
+              <div class="field">
+                <%= f.label :Dinner %><br>
+                <%= f.text_field :dinner %>
+              </div>
+              <div class="field">
+                <%= f.label :Night_snack %><br>
+                <%= f.text_field :ngt_nack %>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="box_outline box_outline_grey box_header box_header_bg">
+              Medication Log
+            </div>
+            <div class="box_outline box_outline_grey alternate_row_colors">
+              <div class="field">
+                <%= f.label :med_breaktime %><br>
+                <%= f.text_field :med_breaktime %>
+              </div>
+              <div class="field">
+                <%= f.label :med_lunch %><br>
+                <%= f.text_field :med_lunch %>
+              </div>
+              <div class="field">
+                <%= f.label :med_eventime %><br>
+                <%= f.text_field :med_eventime %>
+              </div>
+              <div class="field">
+                <%= f.label :med_ngtime %><br>
+                <%= f.text_field :med_ngtime %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- end row 4: food & medication -->
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="field box_outline box_outline_red">
+          <%= f.label :Description %><br>
+          <%= f.text_area(:desc, size: '50x10') %>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="actions">
-        <%= f.submit %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
       </div>
     </div>
-  </div>
-
   <% end %>
 </div>

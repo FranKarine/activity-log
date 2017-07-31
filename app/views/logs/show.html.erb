@@ -1,17 +1,9 @@
-<style>
-  .more_info {
-    height: 0;
-    overflow: hidden;
-    animation-duration: 1s;
-  }
-</style>
-
 <div class="container-fluid">
-  <div class="client_card">
+  <div class="table table-bordered">
     <div class="row">
       <div class="col-md-6">
         <p class="client_name"><%= @log.client %></p>
-        <p class="carer_name">cared for by <%= @log.carg_name %></p>
+        <p class="carer_name">cared by <%= @log.carg_name %></p>
       </div>
       <div class="col-md-5">
         <p>
@@ -28,15 +20,12 @@
         <%= @log.imp_info %>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12">
         Generate this ...
       </div>
-    </div>
+    </div> -->
     <div class="row">
-      <div class="col-md-4">
-        <button class="show_more_info">Show more</button>
-      </div>
       <div class="col-md-4">
         <%= link_to 'Edit', edit_log_path(@log) %>
       </div>
@@ -74,19 +63,19 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <h3><i class="fa fa-user" aria-hidden="true"></i> Extra's</h3>
+          <h3><i class="fa fa-user" aria-hidden="true"></i> Personal_Hygiene</h3>
           <% @log.personalhigiene.each do |ph| %>
-            <%= ph.description %>
+            <%= ph.descrpition %>
           <% end %>
         </div>
         <div class="col-md-4">
-          <h3><i class="fa fa-home" aria-hidden="true"></i> Extra's</h3>
+          <h3><i class="fa fa-home" aria-hidden="true"></i> Housekeeping</h3>
           <% @log.housekeeping.each do |ph| %>
             <%= ph.description %>
           <% end %>
         </div>
         <div class="col-md-4">
-          <h3><i class="fa fa-plus" aria-hidden="true"></i> Extra's</h3>
+          <h3><i class="fa fa-plus" aria-hidden="true"></i> Extras</h3>
           <% @log.extra.each do |ph| %>
             <%= ph.description %>
           <% end %>
@@ -95,19 +84,6 @@
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  $('.client_card .show_more_info').on('click', function() {
-    $show_more = $(this).parents('.client_card').eq(0).find('.more_info');
-    if ($show_more.css('height') === '0') {
-      $show_more.css('height', '100%');
-      $(this).text('Show more');
-    } else {
-      $show_more.css('height', '0');
-      $(this).text('Show less');
-    }
-  });
-</script>
 
 <%= link_to 'Edit', edit_log_path(@log) %> |
 <%= link_to 'Back', logs_path %>
